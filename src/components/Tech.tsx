@@ -1,9 +1,9 @@
+import React from 'react'
+
 const Tech = () => {
-  return ( 
-    <div>
-      <h1 className="text-4xl font-bold">Tech</h1>
-    </div>
-   );
+  return (
+    <div>Tech</div>
+  )
 }
- 
-export default Tech;
+
+export default Tech

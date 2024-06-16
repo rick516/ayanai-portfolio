@@ -1,9 +1,9 @@
+import React from 'react'
+
 const Experience = () => {
-  return ( 
-    <div>
-      <h1 className="text-4xl font-bold">Experience</h1>
-    </div>
-  );
+  return (
+    <div>Experience</div>
+  )
 }
- 
-export default Experience;
+
+export default Experience

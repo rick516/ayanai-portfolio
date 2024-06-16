@@ -1,9 +1,9 @@
+import React from 'react'
+
 const Works = () => {
-  return ( 
-    <div>
-      <h1 className="text-4xl font-bold">Works</h1>
-    </div>
-  );
+  return (
+    <div>Works</div>
+  )
 }
- 
-export default Works;
+
+export default Works
