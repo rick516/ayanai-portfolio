@@ -1,11 +1,15 @@
 import { BrowserRouter as Router } from "react-router-dom";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import About from "./components/About";
-import Experience from "./components/Experience";
-import Tech from "./components/Tech";
-import Works from "./components/Works";
-
+import {
+  Hero,
+  Navbar,
+  About,
+  Experience,
+  Tech,
+  Works,
+  Feedbacks,
+  StarsCanvas,
+  Contact,
+} from "./components";
 
 const App = () => {
   return (
@@ -14,14 +18,19 @@ const App = () => {
         <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
           <Navbar />
           <Hero />
-          <About />
-          <Experience />
-          <Tech />
-          <Works />
+        </div>
+        <About />
+        <Experience />
+        <Tech />
+        <Works />
+        <Feedbacks />
+        <div className="relative z-0">
+          <Contact />
+          <StarsCanvas />
         </div>
       </div>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;
