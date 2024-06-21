@@ -20,7 +20,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-10 h-10 object-contain" />
+          {/* <img src={logo} alt="logo" className="w-10 h-10 object-contain" /> */}
           <p className="text-2xl text-white text-[18px] font-bold cursor-pointer">Ayanai J0urnal</p>
         </Link>
         <ul className="list-none hidden sm:flex justify-row gap-x-10">

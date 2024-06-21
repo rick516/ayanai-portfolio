@@ -7,3 +7,4 @@ export { default as Works } from './Works';
 export { default as Feedbacks } from './Feedbacks';
 export { StarsCanvas } from './canvas'; 
 export { default as Contact } from './Contact';
+export { default as MoleculeCanvas } from './MoleculeCanvas';
