@@ -9,28 +9,28 @@ import {
   Feedbacks,
   StarsCanvas,
   Contact,
-  MoleculeCanvas,
+  FlowingLightsAnimation,
+  SmokeTrailAnimation
 } from "./components";
 
 const App = () => {
   return (
     <Router>
-      <div className="relative z-0 bg-primary">
-        <div className="bg-cover bg-center bg-no-repeat">
+      <div className="relative w-full h-screen bg-primary">
+        <div className="absolute inset-0 z-0">
+          <SmokeTrailAnimation />
+          <FlowingLightsAnimation />
+        </div>
+        <div className="relative z-10 bg-transparent">
           <Navbar />
           <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
-        <div className="relative z-0">
+          <About />
+          <Experience />
+          <Tech />
+          <Works />
+          <Feedbacks />
           <Contact />
           <StarsCanvas />
-        </div>
-        <div className="fixed top-0 left-0 w-full h-full z-[-1]">
-          <MoleculeCanvas />
         </div>
       </div>
     </Router>

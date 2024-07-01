@@ -29,7 +29,7 @@ const ServiceCard = ({ index, title, icon }: { index: number, title: string, ico
 
 const About = () => {
   return (
-    <div className='space-y-2'>
+    <div className='w-full h-screen mx-auto flex flex-col justify-center items-center space-y-2'>
       <div className={`${styles.paddingX} flex justify-start items-center`}>
         <div className="w-5 h-5 rounded-full bg-[#915eff]" />
         <div className="h-1 sm:w-80 w-40 bg-gradient-to-r from-[#915eff] to-[#1b1b1b]" />
@@ -43,7 +43,7 @@ const About = () => {
       </motion.div>
       <motion.div
         variants={fadeIn("left", "", 0.1, 1)}
-        className={`${styles.paddingX} space-y-4`}
+        className={`${styles.paddingX} ${styles.paddingY} w-[100vh]`}
       >
         インターンシップとして台湾で展開する後払い決済サービスのRubyバックエンドプログラマーとして与信アルゴリズムの開発に従事。その後、日本初の『感じた価値に応じて支払い価格を決める』ポストプライシング決済サービスに正社員唯一のエンジニア兼EM兼ジュニアPdMとして参画。月間流通十数万円程度から数億円程度までの事業成長を経験。
         「どうすればこれまで応援が届かなかった人々まで贈与を循環させる社会をつくれるのか？」みたいなHow Might Weを考えて日常消費と応援の距離を0にする決済UXを試行錯誤する日々。
