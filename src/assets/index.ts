@@ -33,6 +33,7 @@ import three_shake from "./company/3-shake.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import ayanai from "./ayanai.jpeg";
 
 export {
   logo,
@@ -67,5 +68,6 @@ export {
   aftee,
   netprotections,
   geniac,
-  three_shake
+  three_shake,
+  ayanai
 };

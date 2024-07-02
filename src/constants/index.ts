@@ -27,7 +27,8 @@ import {
   aftee,
   netprotections,
   geniac,
-  three_shake
+  three_shake,
+  ayanai
 } from "../assets";
 
 export const navLinks = [
@@ -171,13 +172,13 @@ const experiences = [
     ],
   },
   {
-    title: "Fullstack Developer",
-    company_name: "3-SHAKE, Inc.",
-    icon: three_shake,
-    iconBg: "#fff",
+    title: "Artist",
+    company_name: "Cluv43",
+    icon: ayanai,
+    iconBg: "#91F5FF",
     date: "Jul 2024 - Present",
     points: [
-      "ITサービスの自動脆弱性診断ツール「Securify」の開発に従事。",
+      "みんなが自分の人生を愛せる仕組みを社会実装する人。",
     ],
   },
 ];
