@@ -16,12 +16,12 @@ import {
 const App = () => {
   return (
     <Router>
-      <div className="relative w-full h-screen bg-primary">
-        <div className="absolute inset-0 z-0">
-          <SmokeTrailAnimation />
+      <div className="relative w-full">
+        <div className="fixed inset-0 z-0">
+          {/* <SmokeTrailAnimation /> */}
           <FlowingLightsAnimation />
         </div>
-        <div className="relative z-10 bg-transparent">
+        <div className="relative z-1 bg-transparent">
           <Navbar />
           <Hero />
           <About />

@@ -7,7 +7,7 @@ const SectionWrapper = (Component: React.ComponentType, idName: string) =>
   function HOC() {
     return (
       <motion.section
-        variants={staggerContainer()}
+        variants={staggerContainer(0.2, 0.5)}
         initial='hidden'
         animate='show'
         whileInView="show"

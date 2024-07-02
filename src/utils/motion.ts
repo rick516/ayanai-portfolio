@@ -75,12 +75,12 @@ export const slideIn = (direction: "left" | "right" | "up" | "down", type: strin
   };
 };
 
-export const staggerContainer = (staggerChildren: number, delayChildren: number) => {
+export const staggerContainer = (staggerChildren: number | null, delayChildren: number | null) => {
   return {
     hidden: {},
     show: {
       transition: {
-        staggerChildren: staggerChildren,
+        staggerChildren: staggerChildren || 0,
         delayChildren: delayChildren || 0,
       },
     },
