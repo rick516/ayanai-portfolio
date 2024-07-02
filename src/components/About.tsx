@@ -43,7 +43,7 @@ const About = () => {
       </motion.div>
       <motion.p
         variants={fadeIn("left", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-4 text-white text-[17px] max-w-3xl leading-[30px]"
       >
         インターンシップとして台湾で展開する後払い決済サービスのRubyバックエンドプログラマーとして与信アルゴリズムの開発に従事。その後、日本初の『感じた価値に応じて支払い価格を決める』ポストプライシング決済サービスに正社員唯一のエンジニア兼EM兼ジュニアPdMとして参画。月間流通十数万円程度から数億円程度までの事業成長を経験。
         「どうすればこれまで応援が届かなかった人々まで贈与を循環させる社会をつくれるのか？」みたいなHow Might Weを考えて日常消費と応援の距離を0にする決済UXを試行錯誤する日々。

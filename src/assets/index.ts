@@ -25,6 +25,10 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import atonegime from "./company/atonegime.png";
+import aftee from "./company/aftee.png";
+import netprotections from "./company/netprotections.png";
+import geniac from "./company/geniac.jpeg";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -59,4 +63,8 @@ export {
   carrent,
   jobit,
   tripguide,
+  atonegime,
+  aftee,
+  netprotections,
+  geniac
 };
