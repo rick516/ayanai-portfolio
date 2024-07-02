@@ -27,6 +27,7 @@ import {
   aftee,
   netprotections,
   geniac,
+  three_shake
 } from "../assets";
 
 export const navLinks = [
@@ -120,7 +121,7 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Ruby Backend Developer",
+    title: "Backend Developer",
     company_name: "Netprotections, Inc.",
     icon: aftee,
     iconBg: "#FFF",
@@ -167,6 +168,16 @@ const experiences = [
       "GENIACコミュニティの開発メンバーとしてフルスクラッチでの10B LLM基盤モデルの開発コンペに参加。",
       "チーム全体のプロジェクトマネジメントや事前学習のデータ整備やLLMによる合成データ作成、教師ありファインチューニングを担当。",
       "dropless MoEアーキテクチャやASK-LLMなど最新論文のPoCを経験。",
+    ],
+  },
+  {
+    title: "Fullstack Developer",
+    company_name: "3-SHAKE, Inc.",
+    icon: three_shake,
+    iconBg: "#fff",
+    date: "Jul 2024 - Present",
+    points: [
+      "ITサービスの自動脆弱性診断ツール「Securify」の開発に従事。",
     ],
   },
 ];

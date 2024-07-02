@@ -17,7 +17,7 @@ const ExperienceCard = ({ experience }: { experience: typeof experiences[number]
       icon={
         <div className='flex justify-center items-center w-full h-full'>
           <img
-            className="w-[60%] h-[60%] object-contain"
+            className="w-[80%] h-[80%] object-contain"
             src={experience.icon}
             alt={experience.company_name}
           />

@@ -29,7 +29,7 @@ import atonegime from "./company/atonegime.png";
 import aftee from "./company/aftee.png";
 import netprotections from "./company/netprotections.png";
 import geniac from "./company/geniac.jpeg";
-
+import three_shake from "./company/3-shake.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
@@ -66,5 +66,6 @@ export {
   atonegime,
   aftee,
   netprotections,
-  geniac
+  geniac,
+  three_shake
 };
