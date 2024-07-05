@@ -34,6 +34,8 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import ayanai from "./ayanai.jpeg";
+import atonegime_product from "./atonegime-product.png";
+import aftee_product from "./aftee-product.png";
 
 export {
   logo,
@@ -69,5 +71,7 @@ export {
   netprotections,
   geniac,
   three_shake,
-  ayanai
+  ayanai,
+  atonegime_product,
+  aftee_product,
 };

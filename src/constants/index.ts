@@ -27,8 +27,9 @@ import {
   aftee,
   netprotections,
   geniac,
-  three_shake,
-  ayanai
+  atonegime_product,
+  ayanai,
+  aftee_product,
 } from "../assets";
 
 export const navLinks = [
@@ -212,67 +213,99 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "後払い決済AFTEE",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "台湾でシェアNo.1の後払い決済AFTEE。ど文系の私にシステム開発の楽しさを教えてくれた思い出の事業。",
     tags: [
       {
-        name: "react",
+        name: "postgresql",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
-        color: "green-text-gradient",
+        name: "ruby",
+        color: "orange-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "rubyonrails",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: aftee_product,
+    source_code_link: "https://aftee.tw/",
   },
   {
-    name: "Job IT",
+    name: "あと値決め",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "「気づけば社会は良くなっていた。」日常消費と応援といいう行為の距離を0に。感じた価値に応じてあとで支払う日本初ポストプライシング決済。社会人3年目までを捧げた私の青春。",
     tags: [
       {
         name: "react",
-        color: "blue-text-gradient",
+        color: "grey-text-gradient",
       },
       {
-        name: "restapi",
+        name: "nodejs",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "mui",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "aws",
         color: "pink-text-gradient",
       },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
+      {
+        name: "serverless_framework",
+        color: "purple-text-gradient",
+      },
+      {
+        name: "javascript",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "typescript",
+        color: "blue-text-gradient",
+      },
       {
         name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "graphql",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: atonegime_product,
+    source_code_link: "https://pricing.netprotections.com/",
+  },
+  {
+    name: "GENIAC 10B基盤モデル開発",
+    description:
+      "経済産業省&松尾研主導の10B基盤モデルの開発メンバー。droplessMoEアーキテクチャやASM-LLMによるデータのスコアリング、合成データによる教師ありファインチューニングなどのPoCを経験。",
+    tags: [
+      {
+        name: "gcp",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "python",
+        color: "green-text-gradient",
+      },
+      {
+        name: "llm",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "mixture_of_experts",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "ask_llm",
+        color: "orange-text-gradient",
+      },
+    ],
+    image: geniac,
+    source_code_link: "https://www.meti.go.jp/policy/mono_info_service/geniac/index.html",
   },
 ];
 

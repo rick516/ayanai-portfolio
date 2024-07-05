@@ -1,8 +1,8 @@
-import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
-import { styles } from "../styles";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { navLinks } from "../constants"
+import { logo, menu, close } from "../assets"
+import { styles } from "../styles"
+import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
 
