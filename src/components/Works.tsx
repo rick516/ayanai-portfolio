@@ -4,7 +4,6 @@ import { projects } from '../constants'
 import { SectionWrapper } from '../hoc'
 import { fadeIn, textVariant } from '../utils/motion'
 import { styles } from '../styles'
-import { github } from '../assets'
 
 type ProjectCardProps = {
   index: number;
@@ -74,8 +73,8 @@ const Works = () => {
   return (
     <>
       <div className="flex justify-start items-center">
-        <div className="w-5 h-5 rounded-full bg-[#915eff]" />
-        <div className="h-1 sm:w-80 w-40 bg-gradient-to-r from-[#915eff] to-[#1b1b1b]" />
+        <div className="w-5 h-5 rounded-full bg-[#0fffeb]" />
+        <div className="h-1 sm:w-80 w-40 bg-gradient-to-r from-[#0fffeb] to-[#1b1b1b]" />
       </div>
       <motion.div
         variants={textVariant(1)}

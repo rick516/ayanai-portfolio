@@ -17,7 +17,7 @@ const ServiceCard = ({ index, title, icon }: { index: number, title: string, ico
     >
       <motion.div
         variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-        className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+        className='w-full border-[#0fffeb] border-[1px] p-[1px] rounded-[20px] shadow-card'
       >
         <div className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly flex-col items-center' >
           <img src={icon} alt={title} className='w-16 h-16 object-contain' />
@@ -32,8 +32,8 @@ const About = () => {
   return (
     <>
       <div className="flex justify-start items-center">
-        <div className="w-5 h-5 rounded-full bg-[#915eff]" />
-        <div className="h-1 sm:w-80 w-40 bg-gradient-to-r from-[#915eff] to-[#1b1b1b]" />
+        <div className="w-5 h-5 rounded-full bg-[#0fffeb]" />
+        <div className="h-1 sm:w-80 w-40 bg-gradient-to-r from-[#0fffeb] to-[#1b1b1b]" />
       </div>
       <motion.div
         variants={textVariant(1)}
