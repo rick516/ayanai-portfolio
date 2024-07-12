@@ -1,17 +1,23 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { EarthCanvas } from './canvas'
 import { styles } from '../styles'
 import { SectionWrapper } from '../hoc'
-import { slideIn, textVariant } from '../utils/motion'
-import { github, linkedin, twitter } from '../assets'
+import { slideIn } from '../utils/motion'
 import emailjs from '@emailjs/browser'
+
+// 環境変数の型安全性を確保
+const {
+  VITE_EMAILJS_SERVICE_ID,
+  VITE_EMAILJS_TEMPLATE_ID,
+  VITE_EMAILJS_PUBLIC_KEY
+} = import.meta.env
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null)
   const [form, setForm] = useState({ name: '', email: '', message: '' })
-
   const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ 
@@ -20,11 +26,42 @@ const Contact = () => {
     })
   }
 
+  useEffect(() => {
+    if (VITE_EMAILJS_PUBLIC_KEY) {
+      emailjs.init(VITE_EMAILJS_PUBLIC_KEY)
+    }
+  }, [])
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
-    //  TODO: emailjsのセットアップ
+    setStatus('idle')
+
+    try {
+      const result = await emailjs.sendForm(
+        VITE_EMAILJS_SERVICE_ID!,
+        VITE_EMAILJS_TEMPLATE_ID!,
+        formRef.current!,
+        VITE_EMAILJS_PUBLIC_KEY
+      )
+      console.log(result.text)
+      setLoading(false)
+      setStatus('success')
+      setForm({ name: '', email: '', message: '' })
+    } catch (error) {
+      console.error('Failed to send email:', error)
+      setLoading(false)
+      setStatus('error')
+    }
   }
+
+  useEffect(() => {
+    let timer: NodeJS.Timeout
+    if (status !== 'idle') {
+      timer = setTimeout(() => setStatus('idle'), 5000)
+    }
+    return () => clearTimeout(timer)
+  }, [status])
 
   return (
     <div className='xl:mt-12 flex gap-10 overflow-hidden'>
@@ -34,17 +71,23 @@ const Contact = () => {
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h2 className={styles.sectionHeadText}>Contact.</h2>
+        {status === 'success' && (
+          <div className="mb-4 p-4 bg-green-100 text-green-700 rounded">
+            メッセージが送信されました！
+          </div>
+        )}
+        {status === 'error' && (
+          <div className="mb-4 p-4 bg-red-100 text-red-700 rounded">
+            メッセージの送信に失敗しました。もう一度お試しください。
+          </div>
+        )}
         <form 
           ref={formRef} 
           onSubmit={handleSubmit}
           className='mt-12 flex flex-col gap-8'
         >
           <label className='flex flex-col'>
-            <span 
-              className='text-white mb-4 font-medium'
-            >
-              氏名
-            </span>
+            <span className='text-white mb-4 font-medium'>氏名</span>
             <input 
               type="text"
               name="name" 
@@ -53,32 +96,28 @@ const Contact = () => {
               onChange={handleChange} 
               placeholder='ex; あやないちゃん' 
               required 
+              minLength={2}
+              maxLength={50}
               className='placeholder:text-secondary text-white bg-[#1F2937] rounded-lg outlined-none border-none font-medium py-4 px-6'
+              aria-required="true"
             />
           </label>
           <label className='flex flex-col'>
-            <span 
-              className='text-white mb-4 font-medium'
-            >
-              メールアドレス
-            </span>
+            <span className='text-white mb-4 font-medium'>メールアドレス</span>
             <input 
               type="email"
               name="email" 
-              id="name" 
+              id="email" 
               value={form.email} 
               onChange={handleChange} 
               placeholder='example@example.com' 
               required 
               className='placeholder:text-secondary text-white bg-[#1F2937] rounded-lg outlined-none border-none font-medium py-4 px-6'
+              aria-required="true"
             />
           </label>
           <label className='flex flex-col'>
-            <span 
-              className='text-white mb-4 font-medium'
-            >
-              メールアドレス
-            </span>
+            <span className='text-white mb-4 font-medium'>メッセージ</span>
             <textarea 
               rows={4}
               name="message" 
@@ -87,14 +126,18 @@ const Contact = () => {
               onChange={handleChange} 
               placeholder='問い合わせ内容' 
               required 
+              minLength={10}
+              maxLength={500}
               className='placeholder:text-secondary text-white bg-[#1F2937] rounded-lg outlined-none border-none font-medium py-4 px-6'
+              aria-required="true"
             />
           </label>
           <button
             type='submit'
-            className='bg-[#0fffeb] py-3 px-8 outline-none w-fit text-black font-bold shadow-md shadow-primary rounded-xl'
+            disabled={loading}
+            className='bg-[#0fffeb] py-3 px-8 outline-none w-fit text-black font-bold shadow-md shadow-primary rounded-xl disabled:opacity-50'
           >
-            {loading ? '送信中...' : '送信済み'}
+            {loading ? '送信中...' : '送信する'}
           </button>
         </form>
       </motion.div>
