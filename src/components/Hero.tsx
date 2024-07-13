@@ -1,47 +1,38 @@
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { styles } from "../styles"
-import { textVariant } from "../utils/motion"
+import ayanaiPortrait from "../assets/ayanai-portrait.jpeg"
+import { About } from "./"
+import { SectionWrapper } from "../hoc"
 
 const Hero = () => {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
+
   return (
-    <section className="relative w-full h-screen mx-auto">
-      <div className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}>
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#0fffeb]" />
-          <div className="w-1 sm:h-80 h-40 bg-gradient-to-b from-[#0fffeb] to-[#000000]" />
-        </div>
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            こんにちは、<br />
-            <span className="text-[#0fffeb]">ayanai.</span>です。
-          </h1>
-          <p className={`${styles.heroSubText} text-white-100`}>
-            私は「みんなが自分と世界を愛せる居場所」をつくるためにプロダクトやビジネスを生み出す
-            <span className="text-[#0fffeb]">Love Artist</span>です。
-          </p>
-        </div>
+    <section className="w-full mx-auto overflow-hidden flex flex-row justify-between">
+      <div className="flex flex-col justify-center items-start max-w-[50%]">
+        <About />
       </div>
-      {/* <ComputersCanvas /> */}
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-        <a href="#about">
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2" >
-            <motion.div
-              variants={textVariant(1)}
-              animate={{
-                y: [0, 24, 0]
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "loop"
-              }}
-              className="w-3 h-3 rounded-full bg-secondary mb-1"
-            />
-          </div>
-        </a>
+      <div className="inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-center justify-between z-10">
+        <motion.div
+          className="h-[80%]"
+          style={{ y }}
+        >
+          <motion.img
+            src={ayanaiPortrait}
+            alt="Ayanai Portrait"
+            className="w-full h-full object-cover"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            whileHover={{ scale: 1.05 }}
+            loading="lazy"
+          />
+        </motion.div>
       </div>
     </section>
   )
 }
 
-export default Hero
+export default SectionWrapper(Hero, "hero")

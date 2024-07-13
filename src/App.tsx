@@ -2,15 +2,12 @@ import { BrowserRouter as Router } from "react-router-dom";
 import {
   Hero,
   Navbar,
-  About,
   Experience,
   Tech,
   Works,
-  Feedbacks,
   StarsCanvas,
   Contact,
   FlowingLightsAnimation,
-  SmokeTrailAnimation
 } from "./components";
 
 const App = () => {
@@ -24,7 +21,6 @@ const App = () => {
         <div className="relative z-1 bg-transparent">
           <Navbar />
           <Hero />
-          <About />
           <Experience />
           <Tech />
           <Works />

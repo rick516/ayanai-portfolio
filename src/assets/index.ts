@@ -36,6 +36,7 @@ import tripguide from "./tripguide.png";
 import ayanai from "./ayanai.jpeg";
 import atonegime_product from "./atonegime-product.png";
 import aftee_product from "./aftee-product.png";
+import ayanaiPortrait from "./ayanai-portrait.jpeg";
 
 export {
   logo,
@@ -74,4 +75,5 @@ export {
   ayanai,
   atonegime_product,
   aftee_product,
+  ayanaiPortrait,
 };
