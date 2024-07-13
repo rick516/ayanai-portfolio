@@ -20,6 +20,14 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
+import nextjs from "./tech/next-js.svg";
+import notion from "./tech/notion.svg";
+import postgresql from "./tech/postgresql.png";
+import ruby from "./tech/ruby.svg";
+import vercel from "./tech/vercel.svg";
+import python from "./tech/python.svg";
+import gcp from "./tech/gcp.png";
+import aws from "./tech/aws.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -76,4 +84,12 @@ export {
   atonegime_product,
   aftee_product,
   ayanaiPortrait,
+  nextjs,
+  notion,
+  postgresql,
+  ruby,
+  vercel,
+  python,
+  gcp,
+  aws,
 };

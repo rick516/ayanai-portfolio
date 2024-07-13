@@ -1,57 +1,89 @@
-import { Suspense } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { Decal, Float, useTexture, OrbitControls, Preload } from '@react-three/drei'
-
-import CanvasLoader from '../Loader'
+import React, { Suspense, useCallback, useMemo } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import {
+  Decal,
+  Float,
+  OrbitControls,
+  Preload,
+  useTexture,
+} from "@react-three/drei";
+import * as THREE from "three";
+import CanvasLoader from "../Loader";
 
 interface BallProps {
-  imgUrl: string
+  imgUrl: string;
+  name: string;
+  color?: string;
+  scale?: number;
+  rotationSpeed?: number;
 }
 
-const Ball = (props: BallProps) => {
-  const [decal] = useTexture([props.imgUrl])
+const Ball: React.FC<BallProps> = ({
+  imgUrl,
+  name,
+  color = "#fff8eb",
+  scale = 2.75,
+  rotationSpeed = 0.01,
+}) => {
+  const [decal] = useTexture([imgUrl]);
+  const meshRef = React.useRef<THREE.Mesh>(null);
+
+  const material = useMemo(() => {
+    return new THREE.MeshStandardMaterial({
+      color,
+      polygonOffset: true,
+      polygonOffsetFactor: -5,
+      flatShading: true,
+    });
+  }, [color]);
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime) * rotationSpeed;
+      meshRef.current.rotation.y = Math.cos(state.clock.elapsedTime) * rotationSpeed;
+    }
+  });
+
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
       <ambientLight intensity={0.25} />
       <directionalLight position={[0, 0, 0.05]} />
-      <mesh castShadow receiveShadow scale={2.75}>
+      <mesh ref={meshRef} castShadow receiveShadow scale={scale}>
         <icosahedronGeometry args={[1, 1]} />
-        <meshStandardMaterial
-          color="#ffffff"  // より白い色に変更
-          polygonOffset
-          polygonOffsetFactor={-5}
-          flatShading
-        />
+        <primitive object={material} attach="material" />
         <Decal
           position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
+          scale={1}
           map={decal}
+          flatShading
         />
       </mesh>
     </Float>
-  )
-}
+  );
+};
 
-interface BallCanvasProps {
-  icon: string
-}
-
-const BallCanvas = (props: BallCanvasProps) => {
-
+const BallCanvas: React.FC<BallProps> = ({ icon, name, ...props }) => {
+  const handleError = useCallback((error: ErrorEvent) => {
+    console.error(`Error loading 3D ball for ${name}:`, error);
+  }, [name]);
 
   return (
     <Canvas
       frameloop="demand"
-      shadows
-      gl={{ preserveDrawingBuffer: true }}
+      dpr={[1, 2]}
+      gl={{ alpha: false, antialias: false }}
+      aria-label={`3D Ball with ${name} icon`}
+      onError={handleError}
+      style={{ touchAction: 'none' }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
-        <Ball imgUrl={props.icon} />
+        <OrbitControls enableZoom={false} enablePan={false} makeDefault />
+        <Ball imgUrl={icon} name={name} {...props} />
       </Suspense>
       <Preload all />
     </Canvas>
   );
 };
 
-export default BallCanvas;
+export default React.memo(BallCanvas);

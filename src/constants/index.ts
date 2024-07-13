@@ -5,31 +5,25 @@ import {
   web,
   javascript,
   typescript,
-  html,
-  css,
   reactjs,
-  redux,
-  tailwind,
   nodejs,
-  mongodb,
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
   threejs,
   atonegime,
   aftee,
-  netprotections,
   geniac,
   atonegime_product,
   ayanai,
   aftee_product,
+  nextjs,
+  notion,
+  postgresql,
+  ruby,
+  python,
+  gcp,
+  aws,
 } from "../assets";
 
 export const navLinks = [
@@ -68,14 +62,6 @@ const services = [
 
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
     name: "JavaScript",
     icon: javascript,
   },
@@ -88,20 +74,8 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
     name: "Node JS",
     icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
   },
   {
     name: "Three JS",
@@ -118,6 +92,34 @@ const technologies = [
   {
     name: "docker",
     icon: docker,
+  },
+  {
+    name: "nextjs",
+    icon: nextjs,
+  },
+  {
+    name: "notion",
+    icon: notion,
+  },
+  {
+    name: "postgresql",
+    icon: postgresql,
+  },
+  {
+    name: "ruby",
+    icon: ruby,
+  },
+  {
+    name: "python",
+    icon: python,
+  },
+  {
+    name: "gcp",
+    icon: gcp,
+  },
+  {
+    name: "aws",
+    icon: aws,
   },
 ];
 

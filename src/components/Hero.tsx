@@ -10,7 +10,7 @@ const Hero = () => {
 
   return (
     <section className="w-full mx-auto overflow-hidden flex flex-col md:flex-row justify-between items-center">
-      <div className="w-full md:w-auto md:inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-center justify-center md:justify-end z-10">
+      <div className="w-full md:w-auto top-[120px] max-w-7xl mx-auto flex flex-row items-center justify-center md:justify-end z-10">
         <motion.div
           className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 relative"
           style={{ y }}
