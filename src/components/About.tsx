@@ -16,7 +16,7 @@ const About = () => {
       <motion.div
         variants={textVariant(1)}
       >
-        <p className={styles.sectionSubText}>introduction</p>
+        <p className={styles.sectionSubText}>INTRODUCTION</p>
         <h2 className={styles.sectionHeadText}>ayanai.</h2>
         <TransientText roles={roles} />
       </motion.div>
@@ -24,9 +24,17 @@ const About = () => {
         variants={fadeIn("left", "", 0.1, 1)}
         className="mt-4 text-white text-[17px] max-w-3xl leading-[30px]"
       >
-        インターンシップとして台湾で展開する後払い決済サービスのRubyバックエンドプログラマーとして与信アルゴリズムの開発に従事。その後、日本初の『感じた価値に応じて支払い価格を決める』ポストプライシング決済サービスに正社員唯一のエンジニア兼EM兼ジュニアPdMとして参画。月間流通十数万円程度から数億円程度までの事業成長を経験。
-        「どうすればこれまで応援が届かなかった人々まで贈与を循環させる社会をつくれるのか？」みたいなHow Might Weを考えて日常消費と応援の距離を0にする決済UXを試行錯誤する日々。
-        技術負債まみれのMVPプロダクトに対してトランザクション爆増に伴うシステムアーキテクチャのフルリプレイスや2度のUXリニューアルなど、プロダクトビジョンや市場獲得戦略からロードマップを策定しながら技術負債と向き合いつつプロダクトシステム全体のアーキテクトを主導。
+        <p>
+          私は人として生きる上でも、ビジネスをする上でも「自分の人生を愛せる人を増やすこと」を大切にしています。
+        </p>
+        <br />
+        <p>
+          「体験した後に感じた価値に応じて支払う」ポストプライシング決済新規事業で月間流通金額10万円から数億円までの事業成長をEMやジュニアPdMとして経験しました。
+        </p>
+        <br />
+        <p>
+          得意領域としてはエンジニアリングとプロダクトマネジメントの両面でなんでもやりながら不確実性の高いプロダクトシステム開発を推進することです。
+        </p>
       </motion.p>
     </>
   )
