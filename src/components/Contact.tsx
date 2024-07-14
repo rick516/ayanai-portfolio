@@ -64,10 +64,10 @@ const Contact = () => {
   }, [status])
 
   return (
-    <div className='xl:mt-12 flex gap-10 overflow-hidden'>
+    <div className='xl:mt-12 flex flex-col md:flex-row gap-10 overflow-hidden'>
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+        className='flex-1 bg-black-100 p-8 rounded-2xl mx-auto w-full max-w-[550px]'
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h2 className={styles.sectionHeadText}>Contact.</h2>
@@ -143,7 +143,7 @@ const Contact = () => {
       </motion.div>
       <motion.div
         variants={slideIn('right', 'tween', 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px] w-full max-w-[550px] mx-auto'
       >
         <EarthCanvas />
       </motion.div>
