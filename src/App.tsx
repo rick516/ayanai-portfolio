@@ -5,7 +5,6 @@ import {
   Experience,
   Tech,
   Works,
-  StarsCanvas,
   Contact,
   FlowingLightsAnimation,
 } from "./components";
@@ -25,7 +24,6 @@ const App = () => {
           <Tech />
           <Works />
           <Contact />
-          <StarsCanvas />
         </div>
       </div>
     </Router>

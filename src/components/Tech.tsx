@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BallCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
@@ -51,7 +51,7 @@ const Tech = () => {
               className="w-full h-full object-contain"
             />
           ) : (
-            <BallCanvas icon={technology.icon} name={technology.name} />
+            <BallCanvas icon={technology.icon} />
           )}
         </motion.div>
       ))}
