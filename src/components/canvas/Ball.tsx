@@ -64,17 +64,17 @@ const Ball: React.FC<BallProps> = ({
 };
 
 const BallCanvas: React.FC<BallProps> = ({ icon, name, ...props }) => {
-  const handleError = useCallback((error: ErrorEvent) => {
-    console.error(`Error loading 3D ball for ${name}:`, error);
-  }, [name]);
 
   return (
     <Canvas
       frameloop="demand"
       dpr={[1, 2]}
-      gl={{ alpha: false, antialias: false }}
+      gl={{ 
+        alpha: true, 
+        antialias: true,
+        preserveDrawingBuffer: true 
+      }}
       aria-label={`3D Ball with ${name} icon`}
-      onError={handleError}
       style={{ touchAction: 'none' }}
     >
       <Suspense fallback={<CanvasLoader />}>

@@ -20,7 +20,7 @@ const About = () => {
         <h2 className={styles.sectionHeadText}>ayanai.</h2>
         <TransientText roles={roles} />
       </motion.div>
-      <motion.p
+      <motion.div
         variants={fadeIn("left", "", 0.1, 1)}
         className="mt-4 text-white text-[17px] max-w-3xl leading-[30px]"
       >
@@ -35,7 +35,7 @@ const About = () => {
         <p>
           得意領域としてはエンジニアリングとプロダクトマネジメントの両面でなんでもやりながら不確実性の高いプロダクトシステム開発を推進することです。
         </p>
-      </motion.p>
+      </motion.div>
     </>
   )
 }
