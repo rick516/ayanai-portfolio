@@ -135,31 +135,6 @@ const BuddhistIlluminationAnimation: React.FC = () => {
 
     window.addEventListener('mousemove', onMouseMove3D, false);
 
-    const gridSize = 10;
-    const grid: THREE.Vector3[][][][] = Array(gridSize).fill(null).map(() =>
-      Array(gridSize).fill(null).map(() =>
-        Array(gridSize).fill(null).map(() => [] as THREE.Vector3[])
-      )
-    );
-
-    const updateGrid = () => {
-      for (const plane of grid) {
-        for (const line of plane) {
-          for (const cell of line) {
-            cell.length = 0;
-          }
-        }
-      }
-      for (let i = 0; i < particlePositions.length; i += 3) {
-        const x = Math.floor((particlePositions[i] + 100) / (200 / gridSize));
-        const y = Math.floor((particlePositions[i + 1] + 100) / (200 / gridSize));
-        const z = Math.floor((particlePositions[i + 2] + 100) / (200 / gridSize));
-        if (x >= 0 && x < gridSize && y >= 0 && y < gridSize && z >= 0 && z < gridSize) {
-          grid[x][y][z].push(new THREE.Vector3(particlePositions[i], particlePositions[i + 1], particlePositions[i + 2]));
-        }
-      }
-    };
-
     const cameraSpeed = 0.05;
     let cameraTheta = 0;
 
@@ -237,7 +212,7 @@ const BuddhistIlluminationAnimation: React.FC = () => {
       for (const line of lines) {
         line.rotation.y += 0.002;
         line.rotation.z += 0.001;
-      };
+      }
 
       renderer.render(scene, camera);
     };
